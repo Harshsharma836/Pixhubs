@@ -9,6 +9,5 @@ router.get('/follow/:id', authorize, followUser);
 router.post('/update', authorize, updateProfile);
 router.get('/', authorize, getAllUsers);
 router.get('/search', authorize, searchUsers);
- 
 
-export default router; 
+export default router;

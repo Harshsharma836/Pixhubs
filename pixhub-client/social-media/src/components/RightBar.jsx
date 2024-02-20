@@ -65,12 +65,29 @@ const RightBar = () => {
               }
           });
           if(res.data.success) {
-              setData(res.data.data);
-          }
+            setData([newObj, ...res.data.data]);
+        }
       } catch (err) {
           console.log(err);
       }
   }
+
+
+  
+  const newObj = {
+    city: "Indore",
+    cover_pic: "hbasjtpjankbhsylgpqe",
+    createdAt: "2023-02-21T04:51:33.878Z",
+    email: "harshsharma1421@gmail.com",
+    followers: ['63f4524c385b4ca6dfcc62a3', '63fc77ee731499e92b7f2e01', '63f44f56385b4ca6dfcc61f6', '641095c27ad881cecc653c08', '646c220ce5d6c5a47d414d06'],
+    name: "Harsh Sharma",
+    password: "$2a$10$POtNTjuloUU0FCv6HBfHhefl473aMMCwUEq52.cmW9yxQSgmGoKwy",
+    profile_pic: "nwfnhrtlbxv9rrkayh6h",
+    updatedAt: "2023-05-23T02:17:21.647Z",
+    website: "https://github.com/Harshsharma836",
+    __v: 0,
+    _id: "63f44dd5385b4ca6dfcc6184"
+  };
 
   return (
     <Box pl="15px" flex="3" display={["none", "none", "none", "block"]} position="sticky" top="60px" h="110vh" overflow="scroll" bgColor={ bg }>
@@ -86,14 +103,16 @@ const RightBar = () => {
         <Box boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" p="25px" mb="20px"
           bgColor={ colorMode === 'light' ? "white" : "#222"}
         >
+          
             <Text color={colorMode == 'light'? "#555": "lightgray"}>Latest activities</Text>
             
             {
+             
                 data.map(({ name, profile_pic, _id }) => {
                     if(_id !== id) {
                       return <User colorMode={ colorMode } 
                       message="Changed their profile picture" mode="ACTIVITIES" name={ name } 
-                      img={ profile_pic }  key={ _id } />
+                      img={ profile_pic }  key={ _id } />       
                     }
                 })
             }

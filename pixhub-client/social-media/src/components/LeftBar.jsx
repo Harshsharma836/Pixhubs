@@ -52,7 +52,10 @@ const LeftBar = () => {
             <IndividualBar text="MarketPlace" img={ Market } />
             <IndividualBar text="Watch" img={ Watch } />
             <IndividualBar text="Memories" img={ Memories } />
-        </Box>
+            <a href={'https://github.com/harshsharma836'}>
+              <IndividualBar text="Developer Info" img={'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'} />
+            </a>
+</Box>
 
         <hr style={{ margin: '20px 0px 0px', border: 'none', height: '0.5px', backgroundColor: bg }}/>
 
